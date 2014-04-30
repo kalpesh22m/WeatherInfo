@@ -21,6 +21,10 @@
 		1A88DA16190FFD7B00F547CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A88D9F8190FFD7B00F547CF /* UIKit.framework */; };
 		1A88DA1E190FFD7B00F547CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A88DA1C190FFD7B00F547CF /* InfoPlist.strings */; };
 		1A88DA20190FFD7B00F547CF /* WeatherInfoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A88DA1F190FFD7B00F547CF /* WeatherInfoTests.m */; };
+		1A88DA2D190FFDC000F547CF /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A88DA2C190FFDC000F547CF /* Parser.m */; };
+		1A88DA3119100AA800F547CF /* wetherInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A88DA3019100AA800F547CF /* wetherInfoCell.m */; };
+		1A88DA3419100EFC00F547CF /* WetherInfoDataModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A88DA3319100EFC00F547CF /* WetherInfoDataModal.m */; };
+		1ADEDB8C191166E60085219E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ADEDB8B191166E60085219E /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,13 @@
 		1A88DA1B190FFD7B00F547CF /* WeatherInfoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WeatherInfoTests-Info.plist"; sourceTree = "<group>"; };
 		1A88DA1D190FFD7B00F547CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1A88DA1F190FFD7B00F547CF /* WeatherInfoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherInfoTests.m; sourceTree = "<group>"; };
+		1A88DA2B190FFDC000F547CF /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		1A88DA2C190FFDC000F547CF /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
+		1A88DA2F19100AA800F547CF /* wetherInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wetherInfoCell.h; sourceTree = "<group>"; };
+		1A88DA3019100AA800F547CF /* wetherInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wetherInfoCell.m; sourceTree = "<group>"; };
+		1A88DA3219100EFC00F547CF /* WetherInfoDataModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WetherInfoDataModal.h; sourceTree = "<group>"; };
+		1A88DA3319100EFC00F547CF /* WetherInfoDataModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WetherInfoDataModal.m; sourceTree = "<group>"; };
+		1ADEDB8B191166E60085219E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ADEDB8C191166E60085219E /* CoreLocation.framework in Frameworks */,
 				1A88D9F7190FFD7B00F547CF /* CoreGraphics.framework in Frameworks */,
 				1A88D9F9190FFD7B00F547CF /* UIKit.framework in Frameworks */,
 				1A88D9F5190FFD7B00F547CF /* Foundation.framework in Frameworks */,
@@ -101,6 +113,7 @@
 		1A88D9F3190FFD7B00F547CF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1ADEDB8B191166E60085219E /* CoreLocation.framework */,
 				1A88D9F4190FFD7B00F547CF /* Foundation.framework */,
 				1A88D9F6190FFD7B00F547CF /* CoreGraphics.framework */,
 				1A88D9F8190FFD7B00F547CF /* UIKit.framework */,
@@ -112,6 +125,9 @@
 		1A88D9FA190FFD7B00F547CF /* WeatherInfo */ = {
 			isa = PBXGroup;
 			children = (
+				1A88DA2E19100A8F00F547CF /* Custom Cell */,
+				1A88DA29190FFDA700F547CF /* DataModal */,
+				1A88DA2A190FFDA700F547CF /* JsonParser */,
 				1A88DA03190FFD7B00F547CF /* AppDelegate.h */,
 				1A88DA04190FFD7B00F547CF /* AppDelegate.m */,
 				1A88DA06190FFD7B00F547CF /* Main.storyboard */,
@@ -150,6 +166,33 @@
 				1A88DA1C190FFD7B00F547CF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1A88DA29190FFDA700F547CF /* DataModal */ = {
+			isa = PBXGroup;
+			children = (
+				1A88DA3219100EFC00F547CF /* WetherInfoDataModal.h */,
+				1A88DA3319100EFC00F547CF /* WetherInfoDataModal.m */,
+			);
+			path = DataModal;
+			sourceTree = "<group>";
+		};
+		1A88DA2A190FFDA700F547CF /* JsonParser */ = {
+			isa = PBXGroup;
+			children = (
+				1A88DA2B190FFDC000F547CF /* Parser.h */,
+				1A88DA2C190FFDC000F547CF /* Parser.m */,
+			);
+			path = JsonParser;
+			sourceTree = "<group>";
+		};
+		1A88DA2E19100A8F00F547CF /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1A88DA2F19100AA800F547CF /* wetherInfoCell.h */,
+				1A88DA3019100AA800F547CF /* wetherInfoCell.m */,
+			);
+			path = "Custom Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +292,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A88DA3419100EFC00F547CF /* WetherInfoDataModal.m in Sources */,
+				1A88DA3119100AA800F547CF /* wetherInfoCell.m in Sources */,
+				1A88DA2D190FFDC000F547CF /* Parser.m in Sources */,
 				1A88DA0B190FFD7B00F547CF /* ViewController.m in Sources */,
 				1A88DA05190FFD7B00F547CF /* AppDelegate.m in Sources */,
 				1A88DA01190FFD7B00F547CF /* main.m in Sources */,
@@ -378,10 +424,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: LAKINDRA BIRGUNDA (6BV4L6BY65)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeatherInfo/WeatherInfo-Prefix.pch";
 				INFOPLIST_FILE = "WeatherInfo/WeatherInfo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "86D16A00-F177-473E-98D7-779716209C93";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -391,10 +439,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: LAKINDRA BIRGUNDA (6BV4L6BY65)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeatherInfo/WeatherInfo-Prefix.pch";
 				INFOPLIST_FILE = "WeatherInfo/WeatherInfo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "86D16A00-F177-473E-98D7-779716209C93";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -460,6 +510,7 @@
 				1A88DA25190FFD7B00F547CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A88DA26190FFD7B00F547CF /* Build configuration list for PBXNativeTarget "WeatherInfoTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +519,7 @@
 				1A88DA28190FFD7B00F547CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

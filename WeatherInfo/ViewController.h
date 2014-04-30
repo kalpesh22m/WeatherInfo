@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
-
+#import <CoreLocation/CoreLocation.h>
+@interface ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,CLLocationManagerDelegate,UITextFieldDelegate>
+{
+    __weak IBOutlet UITextField *textfieldCityName;
+    __weak IBOutlet UITableView *tblWetherInfo;
+    __weak IBOutlet UIActivityIndicatorView *activityIndicator;
+   
+}
+-(IBAction)getInfoBtnClicked:(id)sender;
 @end
